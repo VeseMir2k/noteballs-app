@@ -24,40 +24,22 @@
         </div>
       </div>
     </div>
-
-    <div
+    <Note
       v-for="note in notes"
       :key="note.id"
-      class="card mb-4"
-    >
-      <div class="card-content">
-        <div class="content">
-          {{ note.content }}
-        </div>
-      </div>
-      <footer class="card-footer">
-        <a
-          href="#"
-          class="card-footer-item"
-          >Edit</a
-        >
-        <a
-          href="#"
-          class="card-footer-item"
-          >Delete</a
-        >
-      </footer>
-    </div>
+      :note="note"
+    />
   </div>
 </template>
 
 <script setup>
   // ~ imports
-  import { ref } from 'vue';
+  import { ref } from 'vue'
+  import Note from '@/components/Notes/Note.vue'
 
   // ~ notes
-  const newNote = ref('');
-  const newNoteRef = ref(null);
+  const newNote = ref('')
+  const newNoteRef = ref(null)
 
   const notes = ref([
     {
@@ -69,19 +51,19 @@
       id: 'id2',
       content: 'This is a shorter note! Woo!',
     },
-  ]);
+  ])
 
   const addNote = () => {
     let currenDate = new Date().getTime(),
-      id = currenDate.toString();
+      id = currenDate.toString()
 
     let note = {
       id,
       content: newNote.value,
-    };
+    }
 
-    notes.value.unshift(note);
-    newNote.value = '';
-    newNoteRef.value.focus();
-  };
+    notes.value.unshift(note)
+    newNote.value = ''
+    newNoteRef.value.focus()
+  }
 </script>
