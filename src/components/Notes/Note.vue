@@ -15,6 +15,7 @@
         >Edit</a
       >
       <a
+        @click.prevent="handleDeleteClicked"
         href="#"
         class="card-footer-item"
         >Delete</a
@@ -35,10 +36,18 @@
     },
   })
 
+  // ~ emits
+  const emit = defineEmits(['deleteClicked'])
+
   // ~ character length
   const characterLength = computed(() => {
     let length = props.note.content.length
     let description = props.note.content.length > 1 ? 'characters' : 'character'
     return `${length} ${description}`
   })
+
+  // ~ handle delete clicked
+  const handleDeleteClicked = () => {
+    emit('deleteClicked', props.note.id)
+  }
 </script>
