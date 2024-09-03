@@ -1,6 +1,6 @@
 <template>
   <div class="notes">
-    <div class="card has-background-primary p-4 mb-5">
+    <div class="card has-background-primary-20 p-4 mb-5">
       <div class="field">
         <div class="control">
           <textarea
