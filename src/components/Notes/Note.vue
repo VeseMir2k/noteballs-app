@@ -25,6 +25,7 @@
     <ModalDeleteNote
       v-if="modals.deleteNote"
       v-model="modals.deleteNote"
+      :noteId="note.id"
     />
   </div>
 </template>
@@ -33,7 +34,6 @@
   // ~ imports
   import { computed, reactive } from 'vue'
   import ModalDeleteNote from './ModalDeleteNote.vue'
-  import { useStoreNotes } from '@/stores/storeNotes'
 
   // ~ props
   const props = defineProps({
@@ -42,9 +42,6 @@
       required: true,
     },
   })
-
-  // ~ store
-  const storeNotes = useStoreNotes()
 
   // ~ character length
   const characterLength = computed(() => {
