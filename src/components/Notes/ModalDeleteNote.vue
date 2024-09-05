@@ -5,6 +5,7 @@
       <header class="modal-card-head">
         <p class="modal-card-title">Delete Note?</p>
         <button
+          @click="closeModal"
           class="delete"
           aria-label="close"
         ></button>
@@ -14,10 +15,33 @@
       </section>
       <footer class="modal-card-foot is-justify-content-flex-end">
         <div class="buttons">
-          <button class="button">Cancel</button>
+          <button
+            @click="closeModal"
+            class="button"
+          >
+            Cancel
+          </button>
           <button class="button is-danger">Delete</button>
         </div>
       </footer>
     </div>
   </div>
 </template>
+
+<script setup>
+  // ~ props
+  const props = defineProps({
+    modelValue: {
+      type: Boolean,
+      default: false,
+    },
+  })
+
+  // ~ emits
+  const emit = defineEmits(['update:modelValue'])
+
+  // ~ close modal
+  const closeModal = () => {
+    emit('update:modelValue', false)
+  }
+</script>
