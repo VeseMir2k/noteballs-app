@@ -31,6 +31,7 @@
       >
         <div class="navbar-end">
           <RouterLink
+            @click="showMobileNav = false"
             to="/"
             class="navbar-item"
             active-class="is-active"
@@ -38,6 +39,7 @@
             Notes
           </RouterLink>
           <RouterLink
+            @click="showMobileNav = false"
             to="/stats"
             class="navbar-item"
             active-class="is-active"
@@ -52,10 +54,10 @@
 
 <script setup>
   // ~ imports
-  import { ref } from 'vue';
+  import { ref } from 'vue'
 
   // ~ mobile nav
-  const showMobileNav = ref(false);
+  const showMobileNav = ref(false)
 </script>
 
 <style>
