@@ -22,7 +22,7 @@
       class="input"
       type="text"
       placeholder="Do you love noteballs?"
-      v-autofocus=""
+      v-autofocus
     />
   </div>
 </template>
