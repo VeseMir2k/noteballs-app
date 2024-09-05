@@ -17,6 +17,7 @@
           ref="textareaRef"
           @input="$emit('update:modelValue', $event.target.value)"
           v-autofocus
+          maxlength="100"
         ></textarea>
       </div>
     </div>
