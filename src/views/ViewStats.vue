@@ -23,15 +23,24 @@
       type="text"
       placeholder="Do you love noteballs?"
       v-autofocus
+      v-model="loveNoteballs"
     />
   </div>
 </template>
 
 <script setup>
   // ~ imports
+  import { ref } from 'vue'
   import { useStoreNotes } from '@/stores/storeNotes'
   import { vAutofocus } from '@/directives/vAutofocus'
+  import { useWatchCharacters } from '@/use/useWatchCharacters'
 
   // ~ store
   const storeNotes = useStoreNotes()
+
+  // ~ love noteballs
+  const loveNoteballs = ref('')
+
+  // ~ watch characters
+  useWatchCharacters(loveNoteballs)
 </script>
