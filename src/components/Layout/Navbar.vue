@@ -65,6 +65,7 @@
   // ~ click outside to close
   const navbarMenuRef = ref(null)
   const navbarBurgerRef = ref(null)
+
   onClickOutside(navbarMenuRef, () => (showMobileNav.value = false), {
     ignore: [navbarBurgerRef],
   })
